@@ -1,0 +1,73 @@
+
+package fonts2;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+
+public class FontApplet2 extends Applet {
+    public void init() {     
+        setBackground(Color.white);
+    }
+    public void paint(Graphics g){
+        int anchoApplet=getSize().width;
+        Font oldFont=getFont();
+        Font fuente=new Font("Monospaced", Font.BOLD, 36);
+        g.setFont(fuente);
+        FontMetrics fm=g.getFontMetrics();
+        String texto="La cigüeña vendrá";
+        int ancho=fm.stringWidth(texto);
+        int y=50;
+        g.drawString(texto, (anchoApplet-ancho)/2, y);
+        texto=new String("serÁ en primavera");
+        ancho=fm.stringWidth(texto);
+//características de las fuentes de texto
+        int hFont=fm.getHeight();
+        int ascent=fm.getAscent();
+        int descent=fm.getDescent();
+        int leading=fm.getLeading();
+        g.drawString(texto, (anchoApplet-ancho)/2, y+hFont);
+//dibuja línea base
+        g.setColor(Color.blue);
+        g.drawLine(0, y, getSize().width, y);
+        g.drawLine(0, y+hFont, anchoApplet, y+hFont);
+//dibuja ascent
+        g.setColor(Color.red);
+        g.drawLine(0, y-ascent, anchoApplet, y-ascent);
+        g.drawLine(getSize().width/2, y+hFont-ascent, anchoApplet, y+hFont-ascent);
+//dibuja descent
+        g.setColor(Color.green);
+        g.drawLine(0, y+descent, anchoApplet/2, y+descent);
+        g.drawLine(0, y+hFont+descent, anchoApplet, y+hFont+descent);
+
+//texto centrado verticalmente en la posición  y
+        y+=2*hFont;
+        g.setColor(Color.black);
+        g.drawLine(0, y, anchoApplet, y);
+        g.setColor(Color.red);
+        texto="Centrado: a, p, ñ, 5, Á ";
+        g.drawString(texto, 10, y+hFont/2-descent);
+
+//Escribe tres líneas de texto en la fuente de texto por defecto.
+        g.setFont(oldFont);
+        fm=g.getFontMetrics();
+        hFont=fm.getHeight();
+
+        y+=3*hFont;
+        g.setColor(Color.black);
+        texto="leading ="+leading;
+        g.drawString(texto, 10, y);
+
+        texto="ascent ="+ascent;
+        y+=hFont;
+        g.drawString(texto, 10, y);
+
+        texto="descent ="+descent;
+        y+=hFont;
+        g.drawString(texto, 10, y);
+
+        texto="altura=ascent+descent+leading= "+(ascent+descent+leading);
+        y+=hFont;
+        g.drawString(texto, 10, y);
+     }
+}
