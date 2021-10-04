@@ -1,0 +1,39 @@
+<body>
+  <a href="http://example.com/" style="color:#FF0000;">Red Link</a>
+</body>
+Para empezar vamos a utilizar un código de color Hex, probablemente, el método más común de añadir color a los vínculos.
+ En la etiqueta delimitadora de HTML (<a>), después del atributo href, 
+inserte un atributo de estilo con la propiedad color de su código Hex de color (en nuestro caso #FF0000).
+--------------------------------------------------------------------------------------------------
+<body>
+  <a href="http://example.com/" style="color:red;">Red Link</a>
+</body>
+Nombres de colores HTML son a menudo más legible que sus contrapartes de código Hex, y puede utilizarse en la misma forma.
+ Sustituir el código Hex de color con el nombre de color HTML del ejemplo anterior y voila, el código es muy claro.
+--------------------------------------------------------------------------------------------------
+<body>
+  <a href="http://example.com/" style="color:rgb(255,0,0);">Red Link</a>
+</body>
+Una tercera forma de estilo texto enlace a tu web es mediante los valores RGB. 
+El ajuste de los valores de rgb() les permite ser utilizada dentro de una página web, como si se tratara de un código Hex o nombre de color.
+------------------------------------------------------------------------------------------------
+<body>
+  <a href="http://example.com/" style="color:rgba(255,0,0,0.5);">Red Link</a>
+</body>
+Usando valores RGB tiene la ventaja adicional de permitir un control sobre la opacidad del color.
+ Sustituir rgb() con rgba() y puede especificar un cuarto valor entre 0 y 1 (0 para totalmente transparente, 1 para totalmente opaco).
+---------------------------------------------------------------------------------------------
+<body>
+  <a href="http://example.com/" style="color:hsl(0,100%,50%);">Red Link</a>
+</body>
+HSL, que significa el tono, la saturación y la luminosidad, son otro conjunto de valores de color soportado por la mayoría de los exploradores modernos (IE9+).
+Al igual que la señal RGB, puede ajustar el interior los valores HSL hsl() y utilizarlos en su página web, a continuación.
+-----------------------------------------------------------------------------------------
+
+<body>
+  <a href="http://example.com/" style="color:hsla(0,100%,50%,0.5);">Red Link</a>
+</body>
+HSL también admite un canal alfa, y sigue el mismo formato de RGB; 
+utilizar aceros hsla() en lugar de hsl(), yagregar un cuarto valor de opacidad entre 0 y 1.
+---------------------------------------------------------------------------------------------
+tomado de: https://htmlcolorcodes.com/es/tutoriales/html-color-de-enlace/
